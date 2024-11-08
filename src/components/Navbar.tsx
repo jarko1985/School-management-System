@@ -42,7 +42,7 @@ const Navbar = async () => {
           height={36}
           className="rounded-full"
         /> */}
-        <UserButton afterSwitchSessionUrl="http://localhost:3000" />
+        <UserButton afterSwitchSessionUrl="https://school-management-system-nine-chi.vercel.app" />
       </div>
     </div>
   );

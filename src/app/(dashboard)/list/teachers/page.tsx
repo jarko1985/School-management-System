@@ -8,6 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import { auth } from "@clerk/nextjs/server";
+import { GiSettingsKnobs } from "react-icons/gi";
+import { PiSortAscending } from "react-icons/pi";
 
 type TeacherList = Teacher & { subjects: Subject[] } & { classes: Class[] };
 
@@ -153,10 +155,16 @@ const TeacherListPage = async ({
           <TableSearch />
           <div className="flex items-center gap-4 self-end">
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-              <Image src="/filter.png" alt="" width={14} height={14} />
+              <GiSettingsKnobs
+                className="hover:scale-125 transition-transform duration-300"
+                size={25}
+              />
             </button>
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
-              <Image src="/sort.png" alt="" width={14} height={14} />
+              <PiSortAscending
+                className="hover:scale-125 transition-transform duration-300"
+                size={30}
+              />
             </button>
             {role === "admin" && (
               <FormContainer table="teacher" type="create" />

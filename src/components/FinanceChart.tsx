@@ -77,7 +77,7 @@ const data = [
 
 const FinanceChart = () => {
   return (
-    <div className="bg-white rounded-lg h-full p-4">
+    <div className="bg-white rounded-lg h-full p-4 hover:shadow-xl">
       <div className="flex justify-between items-center">
         <h1 className="text-lg font-semibold">Finance</h1>
         <Image src="/moreDark.png" alt="dots" width={20} height={20} />
@@ -98,13 +98,13 @@ const FinanceChart = () => {
           <XAxis
             dataKey="name"
             axisLine={false}
-            tick={{ fill: "#d1d5db" }}
+            tick={{ fill: "#FF5D00" }}
             tickLine={false}
             tickMargin={10}
           />
           <YAxis
             axisLine={false}
-            tick={{ fill: "#d1d5db" }}
+            tick={{ fill: "#00478F" }}
             tickLine={false}
             tickMargin={20}
           />
@@ -117,13 +117,13 @@ const FinanceChart = () => {
           <Line
             type="monotone"
             dataKey="income"
-            stroke="#0074B7"
+            stroke="#FF5D00"
             strokeWidth={5}
           />
           <Line
             type="monotone"
             dataKey="expense"
-            stroke="#F6A21E"
+            stroke="#00478F"
             strokeWidth={5}
           />
         </LineChart>

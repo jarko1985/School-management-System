@@ -5,15 +5,15 @@
 .react-calendar {
   width: 100% !important;
   border: none !important;
-  font-family: "Inter", sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
 }
 .react-calendar__navigation__label__labelText {
   font-weight: 600 !important;
 }
 
 .react-calendar__tile--active {
-  background-color: #0074b7 !important;
-  color: black !important;
+  background-color: #00478f !important;
+  color: white !important;
 }
 
 /* Review Later */
@@ -37,13 +37,13 @@
 }
 
 .rbc-toolbar button.rbc-active {
-  background-color: #0074b7 !important;
+  background-color: #00478f !important;
   box-shadow: none !important;
   color: white !important;
 }
 
 .rbc-time-view {
-  border-color: #eee !important;
+  border-color: #00478f !important;
 }
 
 .rbc-time-header {
@@ -51,7 +51,7 @@
 }
 
 .rbc-time-content {
-  border: none !important;
+  border: #00478f 1px solid !important;
 }
 
 .rbc-time-gutter.rbc-time-column {
@@ -102,10 +102,13 @@
 .rbc-event:nth-child(8) {
   background-color: #fdf2fb !important;
 }
-
 .rbc-event-label {
   color: gray !important;
   margin-bottom: 5px;
+}
+.react-calendar__tile--now {
+  background-color: #ff5d00 !important;
+  color: white !important;
 }
 
 /*Square Spinner CSS */
@@ -122,16 +125,17 @@ ol {
   left: 50%;
   perspective: 600px;
   transform-style: preserve-3d;
+  transform: scale(0.7); /* Scale down the entire spinner */
 }
 #ui::before {
   content: "";
   position: absolute;
-  width: 100px;
-  height: 5px;
+  width: 50px; /* Reduce width of shadow */
+  height: 3px; /* Adjust shadow height */
   background: rgba(0, 0, 30, 0.7);
-  top: 180px;
-  left: -50px;
-  filter: blur(15px);
+  top: 90px; /* Adjust to center with smaller spinner */
+  left: -25px;
+  filter: blur(10px);
 }
 #ui .dice {
   position: absolute;
@@ -141,31 +145,31 @@ ol {
   animation: parentRotate 10000ms linear infinite;
 }
 #ui .dice.parent .dice_list_item {
-  border-top: 50px solid rgba(0, 20, 100, 1);
-  border-right: 50px solid rgba(0, 30, 110, 1);
-  border-bottom: 50px solid rgba(0, 40, 120, 1);
-  border-left: 50px solid rgba(0, 50, 130, 1);
+  border-top: 25px solid rgba(0, 20, 100, 1); /* Adjust borders */
+  border-right: 25px solid rgba(0, 30, 110, 1);
+  border-bottom: 25px solid rgba(0, 40, 120, 1);
+  border-left: 25px solid rgba(0, 50, 130, 1);
 }
 #ui .dice.child {
   animation: childRotate 20000ms linear infinite;
 }
 #ui .dice.child .dice_list_item {
-  border: 3px solid rgba(0, 0, 0, 1);
-  box-shadow: 0 0 30px 10px rgba(0, 150, 255, 0.6);
+  border: 2px solid rgba(0, 0, 0, 1); /* Adjust child border */
+  box-shadow: 0 0 15px 5px rgba(0, 150, 255, 0.6); /* Adjust shadow */
 }
 #ui .dice_list {
   transform-style: preserve-3d;
 }
 #ui .dice_list_item {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 75px; /* Reduce size */
+  height: 75px; /* Reduce size */
   background: rgba(255, 255, 255, 0.8);
   box-sizing: border-box;
   transform-style: preserve-3d;
 }
 #ui .dice_list_item:nth-child(1) {
-  transform: translate3d(-50%, -50%, 75px);
+  transform: translate3d(-50%, -50%, 37.5px); /* Halved for smaller size */
 }
 #ui .dice_list_item:nth-child(2) {
   transform: translate3d(-50%, 0%, 0) rotateX(90deg);
@@ -180,7 +184,7 @@ ol {
   transform: translate3d(-50%, -100%, 0) rotateX(90deg);
 }
 #ui .dice_list_item:nth-child(6) {
-  transform: translate3d(-50%, -50%, -75px);
+  transform: translate3d(-50%, -50%, -37.5px);
 }
 #ui .dice_list_item.break {
   display: none;

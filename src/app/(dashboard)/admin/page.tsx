@@ -18,25 +18,25 @@ const AdminPage = async ({
       <div className="w-full lg:w-2/3 flex flex-col gap-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <UserCard
-            imageSrc="/staff.jpg"
+            imageSrc="/staff.webp"
             type="admin"
             count="240"
             href="/list/teachers"
           />
           <UserCard
-            imageSrc="/teachers.jpg"
+            imageSrc="/teachers.webp"
             type="teacher"
             count="650"
             href="/list/teachers"
           />
           <UserCard
-            imageSrc="/students.jpg"
+            imageSrc="/students.webp"
             type="student"
             count="3,000"
             href="/list/students"
           />
           <UserCard
-            imageSrc="/parents.jpg"
+            imageSrc="/parents.webp"
             type="parent"
             count="6,500"
             href="/list/parents"

@@ -1,5 +1,7 @@
 "use client";
-
+import { MdOutlineCreateNewFolder } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
+import { RiDeleteBin6Fill } from "react-icons/ri";
 import {
   deleteClass,
   deleteExam,
@@ -136,7 +138,7 @@ const FormModal = ({
 
     return type === "delete" && id ? (
       <form action={formAction} className="p-4 flex flex-col gap-4">
-        <input type="text | number" name="id" value={id} hidden />
+        <input type="text | number" name="id" readOnly value={id} hidden />
         <span className="text-center font-medium">
           All data will be lost. Are you sure you want to delete this {table}?
         </span>
@@ -157,7 +159,23 @@ const FormModal = ({
         className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
         onClick={() => setOpen(true)}
       >
-        <Image src={`/${type}.png`} alt="" width={16} height={16} />
+        {type === "create" ? (
+          <MdOutlineCreateNewFolder
+            size={30}
+            className="hover:scale-125 transition-transform duration-300"
+          />
+        ) : type === "update" ? (
+          <FaRegEdit
+            className="hover:scale-125 transition-transform duration-300"
+            size={25}
+          />
+        ) : (
+          <RiDeleteBin6Fill
+            className="hover:scale-125 transition-transform duration-300"
+            size={20}
+            fill="red"
+          />
+        )}
       </button>
       {open && (
         <div className="w-screen h-screen absolute left-0 top-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">

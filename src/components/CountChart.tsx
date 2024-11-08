@@ -6,6 +6,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { FaMale, FaFemale } from "react-icons/fa";
 
 const CountChart = ({ boys, girls }: { boys: number; girls: number }) => {
   const data = [
@@ -17,12 +18,12 @@ const CountChart = ({ boys, girls }: { boys: number; girls: number }) => {
     {
       name: "Girls",
       count: girls,
-      fill: "#FAE27C",
+      fill: "#FF5D00",
     },
     {
       name: "Boys",
       count: boys,
-      fill: "#C3EBFA",
+      fill: "#00478F",
     },
   ];
   return (
@@ -39,13 +40,10 @@ const CountChart = ({ boys, girls }: { boys: number; girls: number }) => {
           <RadialBar background dataKey="count" />
         </RadialBarChart>
       </ResponsiveContainer>
-      <Image
-        src="/maleFemale.png"
-        alt=""
-        width={50}
-        height={50}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      />
+      <div className="flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <FaFemale size={50} fill="#FF5D00" className="-mr-2" />
+        <FaMale size={50} fill="#00478F" className="-ml-2" />
+      </div>
     </div>
   );
 };

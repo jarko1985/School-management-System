@@ -18,14 +18,19 @@ const AttendanceChart = ({
   return (
     <ResponsiveContainer width="100%" height="90%">
       <BarChart width={500} height={300} data={data} barSize={20}>
-        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd" />
+        <CartesianGrid
+          strokeDasharray="3 3"
+          vertical={false}
+          stroke="#ddd"
+          color="black"
+        />
         <XAxis
           dataKey="name"
           axisLine={false}
-          tick={{ fill: "#d1d5db" }}
+          tick={{ fill: "#00478F" }}
           tickLine={false}
         />
-        <YAxis axisLine={false} tick={{ fill: "#d1d5db" }} tickLine={false} />
+        <YAxis axisLine={false} tick={{ fill: "#FF5D00" }} tickLine={false} />
         <Tooltip
           contentStyle={{ borderRadius: "10px", borderColor: "lightgray" }}
         />
@@ -34,18 +39,8 @@ const AttendanceChart = ({
           verticalAlign="top"
           wrapperStyle={{ paddingTop: "20px", paddingBottom: "40px" }}
         />
-        <Bar
-          dataKey="present"
-          fill="#FAE27C"
-          legendType="circle"
-          radius={[10, 10, 0, 0]}
-        />
-        <Bar
-          dataKey="absent"
-          fill="#C3EBFA"
-          legendType="circle"
-          radius={[10, 10, 0, 0]}
-        />
+        <Bar dataKey="present" fill="#00478F" legendType="circle" />
+        <Bar dataKey="absent" fill="#FF5D00" legendType="circle" />
       </BarChart>
     </ResponsiveContainer>
   );
