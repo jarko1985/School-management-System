@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nunitoSans: ["var(--font-nunito-sans)"],
+      },
       colors: {
         primary: "#0074B7",
         primaryLight: "#60A3D9",

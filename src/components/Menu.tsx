@@ -32,7 +32,9 @@ const Menu = async () => {
                   className="flex items-center justify-center lg:justify-start gap-4 text-gray-500 py-2 rounded-md hover:bg-primary md:px-2 hover:text-white group"
                 >
                   <Image src={subItem.icon} alt="icon" width={20} height={20} />
-                  <span className="hidden lg:block">{subItem.label}</span>
+                  <span className="font-nunitoSans hidden lg:block text-[14px]">
+                    {subItem.label}
+                  </span>
                 </Link>
               );
             }
